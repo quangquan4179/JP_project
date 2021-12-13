@@ -8,6 +8,7 @@ class PlayersController < ApplicationController
 
   # GET /players/1 or /players/1.json
   def show
+      @player_review = PlayerReview.new
   end
 
   # GET /players/new
@@ -64,6 +65,6 @@ class PlayersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit(:name, :birthday, :country, :height, :weight, :club, :image)
+      params.require(:player).permit(:name, :birthday, :country, :height, :weight, :club)
     end
 end

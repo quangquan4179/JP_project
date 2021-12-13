@@ -30,11 +30,24 @@
   <%= @player.club %>
 </p>
 
-<p>
-  <% if @player.image.attached? %>
-    <%= image_tag @player.image %>
-  <% end %>
-</p>
+<h2>Review From</h2>
+<%= form_with(model: @player_review, local: true) do |form| %>
+  <div class= "field">
+    <%= form.text_area :review %>
+    <%= form.hidden_field :player_id, :value => @player.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<h2>Review List</h2>
+<ul>
+  <% @player.player_review.each do |player_review|%>
+   <li><%= player_review.review %>
+     (<i><%= player_review.user.id %></i>)</li>
+<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_player_path(@player) %> |
 <%= link_to 'Back', players_path %>
