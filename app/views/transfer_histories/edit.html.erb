@@ -1,0 +1,6 @@
+<h1>Editing Transfer History</h1>
+
+<%= render 'form', transfer_history: @transfer_history %>
+
+<%= link_to 'Show', [@player, @transfer_history] %> |
+<%= link_to 'Back', player_transfer_histories_path(@player) %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @transfer_history.user_id %>
+</p>
+
+<p>
+  <strong>Old club:</strong>
+  <%= @transfer_history.old_club %>
+</p>
+
+<p>
+  <strong>New club:</strong>
+  <%= @transfer_history.new_club %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @transfer_history.day %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @transfer_history.note %>
+</p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @transfer_history.player_id %>
+</p>
+
+<%= link_to 'Edit', edit_transfer_history_path(@transfer_history) %> |
+<%= link_to 'Back', transfer_histories_path %>

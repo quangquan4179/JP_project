@@ -30,7 +30,22 @@
   <%= @player.club %>
 </p>
 
-<h2>Review From</h2>
+<div>
+    <h2>Transfer History</h2> 
+    <%= link_to 'New Transfer', new_player_transfer_history_path(@player) %>
+    <ul>
+    <% @player.transfer_history.each do |transfer_history|%>
+         <li><%= transfer_history.old_club %>,
+         <%= transfer_history.new_club %>,
+         <%= transfer_history.day %>,
+         <%= transfer_history.note %>
+         </li>
+    <% end %>
+    </ul>
+</div>
+
+
+<h2>Review Form</h2>
 <%= form_with(model: @player_review, local: true) do |form| %>
   <div class= "field">
     <%= form.text_area :review %>

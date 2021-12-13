@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  old_club: MyText
+  new_club: MyText
+  day: 2021-12-13
+  note: MyText
+  player: one
+
+two:
+  user_id: 1
+  old_club: MyText
+  new_club: MyText
+  day: 2021-12-13
+  note: MyText
+  player: two
