@@ -60,7 +60,7 @@
     </h2>
     
     <ul>
-         <% @player.transfer_history.each do |transfer_history|%>
+        
         <table class="table ">
             <tbody>
                <tr>
@@ -69,18 +69,20 @@
                   <td>Date</td>
                   <td>Note</td>
                </tr>
-               <tr>
-                  <td><%= transfer_history.old_club %></td>
-                  <td><%= transfer_history.new_club %>,</td>
-                  <td><%= transfer_history.day %></td>
-                  <td><%= transfer_history.note %></td>
-               </tr>
+                <% @player.transfer_history.each do |transfer_history|%>
+                   <tr>
+                      <td><%= transfer_history.old_club %></td>
+                      <td><%= transfer_history.new_club %>,</td>
+                      <td><%= transfer_history.day %></td>
+                      <td><%= transfer_history.note %></td>
+                   </tr>
+                  <% end %>
                
             </tbody>
          </table>
-          <% end %>
-          
-    <%= link_to 'New Transfer', new_player_transfer_history_path(@player) %>
+       
+          <button type="button" class="btn btn-primary">    <%= link_to 'New Transfer', new_player_transfer_history_path(@player) %>
+</button>
     </ul>
 </div>
 
@@ -103,6 +105,8 @@
      (<i><%= player_review.user.id %></i>)</li>
 <% end %>
 </ul>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <button type="button" class="btn btn-danger"><%= link_to 'Edit', edit_player_path(@player) %></button>
+  <button type="button" class="btn btn-warning"><%= link_to 'Back', players_path %></button>
+</div>
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>
