@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Search Players</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Player name</th>
+      <th>Birthday</th>
+      <th>Country</th>
+      <th>Min height</th>
+      <th>Max height</th>
+      <th>Min weight</th>
+      <th>Max weight</th>
+      <th>Club</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @search_players.each do |search_player| %>
+      <tr>
+        <td><%= search_player.player_name %></td>
+        <td><%= search_player.birthday %></td>
+        <td><%= search_player.country %></td>
+        <td><%= search_player.min_height %></td>
+        <td><%= search_player.max_height %></td>
+        <td><%= search_player.min_weight %></td>
+        <td><%= search_player.max_weight %></td>
+        <td><%= search_player.club %></td>
+        <td><%= link_to 'Show', search_player %></td>
+        <td><%= link_to 'Edit', edit_search_player_path(search_player) %></td>
+        <td><%= link_to 'Destroy', search_player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Search Player', new_search_player_path %>
