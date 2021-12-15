@@ -1,46 +1,88 @@
 <p id="notice"><%= notice %></p>
+<div class="details-player">
+    <h1 class="text-center">
+        <%= @player.name %>
+    </h1>
+    <div class="image-player">
+      <% if @player.image.attached? %>
+      <%= image_tag @player.image%>
+      <% end %>    
+    </div>
+<div class="infor-details">
+      <div class="infor-about-player mt-5 mb-5">
+         <h3 class="text-center">選手の情報</h3>
+         <table class="table ">
+            <tbody>
+               <tr>
+                  <td>誕生日</td>
+                  <td>:</td>
+                  <td><%= @player.birthday %></td>
+               </tr>
+               <tr>
+                  <td>国</td>
+                  <td>:</td>
+                  <td><%= @player.country %></td>
+               </tr>
+               <tr>
+                  <td>高さ</td>
+                  <td>:</td>
+                  <td> <%= @player.height %></td>
+               </tr>
+               <tr>
+                  <td>重量</td>
+                  <td>:</td>
+                 <td><%= @player.weight %></td>
+               </tr>
+               <tr>
+                  <td>クラブ</td>
+                  <td>:</td>
+                   <td>  <%= @player.club%></td>
+               </tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @player.name %>
-</p>
+               <tr>
+                  <td></td>
+                  <td></td>
+                  <td>
+                      <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_player_path(@player)%>  
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+</div>
+</div>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @player.birthday %>
-</p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @player.country %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @player.height %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @player.weight %>
-</p>
-
-<p>
-  <strong>Club:</strong>
-  <%= @player.club %>
-</p>
 
 <div>
-    <h2>Transfer History</h2> 
-    <%= link_to 'New Transfer', new_player_transfer_history_path(@player) %>
+    <h2 class="text-center">
+         Transfer History
+    </h2>
+    
     <ul>
-    <% @player.transfer_history.each do |transfer_history|%>
-         <li><%= transfer_history.old_club %>,
-         <%= transfer_history.new_club %>,
-         <%= transfer_history.day %>,
-         <%= transfer_history.note %>
-         </li>
-    <% end %>
+        
+        <table class="table ">
+            <tbody>
+               <tr>
+                  <td>Old Club</td>
+                  <td>New Club</td>
+                  <td>Date</td>
+                  <td>Note</td>
+               </tr>
+                <% @player.transfer_history.each do |transfer_history|%>
+                   <tr>
+                      <td><%= transfer_history.old_club %></td>
+                      <td><%= transfer_history.new_club %>,</td>
+                      <td><%= transfer_history.day %></td>
+                      <td><%= transfer_history.note %></td>
+                   </tr>
+                  <% end %>
+               
+            </tbody>
+         </table>
+       
+          <button type="button" class="btn btn-primary">    <%= link_to 'New Transfer', new_player_transfer_history_path(@player) %>
+</button>
     </ul>
 </div>
 
@@ -63,6 +105,8 @@
      (<i><%= player_review.user.id %></i>)</li>
 <% end %>
 </ul>
+<div class="btn-group" role="group" aria-label="Basic mixed styles example">
+  <button type="button" class="btn btn-danger"><%= link_to 'Edit', edit_player_path(@player) %></button>
+  <button type="button" class="btn btn-warning"><%= link_to 'Back', players_path %></button>
+</div>
 
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Back', players_path %>

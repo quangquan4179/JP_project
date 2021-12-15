@@ -1,2 +1,9 @@
-<h1>ホームページ</h1>
-<%= link_to "players一覧をみる", players_path %>
+<div class="jumbotron m-5"  >
+  <h1 class="display-4">選手へようこそ</h1>
+  <% if user_signed_in? %>
+      <p>こんにちは、<%= link_to current_user.email, users_show_path %></p>
+  <% end %>
+  <hr class="my-4">
+  <p>選手についてレビューをするサイトです</p>
+  <%= button_to "選手一覧をみる", players_path, method: :get ,class: "btn btn-primary btn-lg" %>
+</div> 
