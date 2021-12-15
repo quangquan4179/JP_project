@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_name: MyString
+  birthday: 2021-12-15
+  country: MyString
+  min_height: 
+  max_height: 
+  min_weight: 
+  max_weight: 
+  club: MyString
+
+two:
+  player_name: MyString
+  birthday: 2021-12-15
+  country: MyString
+  min_height: 
+  max_height: 
+  min_weight: 
+  max_weight: 
+  club: MyString
