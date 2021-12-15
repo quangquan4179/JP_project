@@ -2,6 +2,11 @@
 
 <h1>Players</h1>
 
+<%= form_tag players_path, :method => 'get' do %>
+    <%= text_field_tag :player_name, params[:player_name] %>
+    <%= submit_tag "Search" %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -16,22 +21,25 @@
   </thead>
 
   <tbody>
-    <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.birthday %></td>
-        <td><%= player.country %></td>
-        <td><%= player.height %></td>
-        <td><%= player.weight %></td>
-        <td><%= player.club %></td>
-        <td><%= link_to 'Show', player %></td>
-        <td><%= link_to 'Edit', edit_player_path(player) %></td>
-        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% if @players %>
+        <% @players.each do |player| %>
+          <tr>
+            <td><%= player.name %></td>
+            <td><%= player.birthday %></td>
+            <td><%= player.country %></td>
+            <td><%= player.height %></td>
+            <td><%= player.weight %></td>
+            <td><%= player.club %></td>
+            <td><%= link_to 'Show', player %></td>
+            <td><%= link_to 'Edit', edit_player_path(player) %></td>
+            <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
+<%= link_to 'All Players', players_path %>
 <%= link_to 'New Player', new_player_path %>

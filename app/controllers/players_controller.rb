@@ -4,7 +4,8 @@ class PlayersController < ApplicationController
 
   # GET /players or /players.json
   def index
-    @players = Player.all
+    @player_name = params[:player_name]
+    @players = Player.search(@player_name)
   end
 
   # GET /players/1 or /players/1.json
