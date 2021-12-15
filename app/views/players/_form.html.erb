@@ -1,3 +1,4 @@
+<div class="form-add-infomation">
 <%= form_with(model: player, local: true) do |form| %>
   <% if player.errors.any? %>
     <div id="error_explanation">
@@ -13,32 +14,32 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name ,class:"input-data-form"%>
   </div>
 
   <div class="field">
     <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
+    <%= form.date_select :birthday,class:"input-data-form" %>
   </div>
 
   <div class="field">
     <%= form.label :country %>
-    <%= form.text_field :country %>
+    <%= form.text_field :country,class:"input-data-form"  %>
   </div>
 
   <div class="field">
     <%= form.label :height %>
-    <%= form.text_field :height %>
+    <%= form.text_field :height,class:"input-data-form"  %>
   </div>
 
   <div class="field">
     <%= form.label :weight %>
-    <%= form.text_field :weight %>
+    <%= form.text_field :weight,class:"input-data-form"  %>
   </div>
 
   <div class="field">
     <%= form.label :club %>
-    <%= form.text_field :club %>
+    <%= form.text_field :club,class:"input-data-form"  %>
   </div>
   
   <div class="field">
@@ -50,3 +51,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
