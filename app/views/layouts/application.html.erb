@@ -15,15 +15,13 @@
   <body>
    <div class="container" style="background-color: #333">
         <nav class="navbar navbar-dark navbar-expand-sm">
-            <%= link_to "Home", root_path, class: "nav-link navbar-brand" %>
+            <%= link_to "ホーム", root_path, class: "nav-link navbar-brand" %>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuItems" aria-controls="menuItems" aria-expanded="false" aria-label="Toggle Navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menuItems">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <%= link_to "ホーム", root_path, class: "nav-link" %>
-                    </li>
+                   
 
                     <% if user_signed_in? %>
                         <li class="nav-item">
