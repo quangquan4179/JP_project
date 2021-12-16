@@ -13,42 +13,42 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :名前%>
     <%= form.text_field :name ,class:"input-data-form"%>
   </div>
 
   <div class="field">
-    <%= form.label :birthday %>
+    <%= form.label :誕生日%>
     <%= form.date_select :birthday,class:"input-data-form" %>
   </div>
 
   <div class="field">
-    <%= form.label :country %>
+    <%= form.label :国籍%>
     <%= form.text_field :country,class:"input-data-form"  %>
   </div>
 
   <div class="field">
-    <%= form.label :height %>
+    <%= form.label :身長%>
     <%= form.text_field :height,class:"input-data-form"  %>
   </div>
 
   <div class="field">
-    <%= form.label :weight %>
+    <%= form.label :体重%>
     <%= form.text_field :weight,class:"input-data-form"  %>
   </div>
 
   <div class="field">
-    <%= form.label :club %>
+    <%= form.label :クラブ%>
     <%= form.text_field :club,class:"input-data-form"  %>
   </div>
   
   <div class="field">
-    <%= form.label :image %>
+    <%= form.label :写真%>
     <%= form.file_field :image %><br>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '保存' %>
   </div>
 <% end %>
 </div>

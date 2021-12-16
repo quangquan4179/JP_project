@@ -28,7 +28,7 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, notice: "Player was successfully created." }
+        format.html { redirect_to @player, notice: "選手が作成されました。" }
         format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +41,7 @@ class PlayersController < ApplicationController
   def update
     respond_to do |format|
       if @player.update(player_params)
-        format.html { redirect_to @player, notice: "Player was successfully updated." }
+        format.html { redirect_to @player, notice: "選手が更新されました。" }
         format.json { render :show, status: :ok, location: @player }
       else
         format.html { render :edit, status: :unprocessable_entity }

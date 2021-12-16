@@ -26,7 +26,7 @@ class PlayerReviewsController < ApplicationController
     respond_to do |format|
       if @player_review.save
         url = "/players/" + @player_review.player_id.to_s
-        format.html { redirect_to url, notice: 'Player review was successfully created.' }
+        format.html { redirect_to url, notice: '選手のレビューが作成されました。' }
         format.json { render :show, status: :created, location: @player_review }
       else
         format.html { render :new, status: :unprocessable_entity }

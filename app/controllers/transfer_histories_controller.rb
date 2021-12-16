@@ -28,7 +28,7 @@ class TransferHistoriesController < ApplicationController
     respond_to do |format|
       if @transfer_history.save
         url = "/players/" + @player.id.to_s
-        format.html { redirect_to url, notice: "Transfer history was successfully created." }
+        format.html { redirect_to url, notice: "譲渡の歴史が作成されました。" }
         format.json { render :show, status: :created, location: @transfer_history }
       else
         format.html { render :new, status: :unprocessable_entity }

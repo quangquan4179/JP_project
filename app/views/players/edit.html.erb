@@ -1,10 +1,8 @@
-<h1>Editing Player</h1>
+<h1>選手編集</h1>
 
 <%= render 'form', player: @player %>
 
-
-
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  <button type="button" class="btn btn-danger"><%= link_to 'Show', @player %> </button>
-  <button type="button" class="btn btn-warning"><%= link_to 'Back', players_path %></button>
+  <button type="button" class="btn btn-danger"><%= link_to '表示', @player %> </button>
+  <button type="button" class="btn btn-warning"><%= link_to '戻る', players_path %></button>
 </div>
