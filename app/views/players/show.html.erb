@@ -5,7 +5,7 @@
     </h1>
     <div class="image-player">
       <% if @player.image.attached? %>
-      <%= image_tag @player.image%>
+      <%= image_tag @player.image, class:"card-image"%>
       <% end %>    
     </div>
 <div class="infor-details">
@@ -19,17 +19,17 @@
                   <td><%= @player.birthday %></td>
                </tr>
                <tr>
-                  <td>国</td>
+                  <td>国籍</td>
                   <td>:</td>
                   <td><%= @player.country %></td>
                </tr>
                <tr>
-                  <td>高さ</td>
+                  <td>身長</td>
                   <td>:</td>
                   <td> <%= @player.height %></td>
                </tr>
                <tr>
-                  <td>重量</td>
+                  <td>体重</td>
                   <td>:</td>
                  <td><%= @player.weight %></td>
                </tr>
@@ -56,7 +56,7 @@
 
 <div>
     <h2 class="text-center">
-         Transfer History
+         譲渡の履歴
     </h2>
     
     <ul>
@@ -64,10 +64,10 @@
         <table class="table ">
             <tbody>
                <tr>
-                  <td>Old Club</td>
-                  <td>New Club</td>
-                  <td>Date</td>
-                  <td>Note</td>
+                  <td>以前のクラブ</td>
+                  <td>以降のクラブ</td>
+                  <td>デート</td>
+                  <td>ノート</td>
                </tr>
                 <% @player.transfer_history.each do |transfer_history|%>
                    <tr>
@@ -81,32 +81,32 @@
             </tbody>
          </table>
        
-          <button type="button" class="btn btn-primary">    <%= link_to 'New Transfer', new_player_transfer_history_path(@player) %>
+          <button type="button" class="btn btn-primary">    <%= link_to '譲渡追加', new_player_transfer_history_path(@player) %>
 </button>
     </ul>
 </div>
 
-
-<h2>Review Form</h2>
-<%= form_with(model: @player_review, local: true) do |form| %>
-  <div class= "field">
-    <%= form.text_area :review %>
-    <%= form.hidden_field :player_id, :value => @player.id %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-<h2>Review List</h2>
+<h2>レビューリスト</h2>
 <ul>
   <% @player.player_review.each do |player_review|%>
    <li><%= player_review.review %>
      (<i><%= player_review.user.id %></i>)</li>
 <% end %>
 </ul>
+
+<h3>レビュー</h3>
+<%= form_with(model: @player_review, local: true) do |form| %>
+  <div class="field">
+    <%= form.text_area :review, :size=>"50" %>
+    <%= form.hidden_field :player_id, :value => @player.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit "レビュー追加" %>
+  </div>
+<% end %>
+
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  <button type="button" class="btn btn-danger"><%= link_to 'Edit', edit_player_path(@player) %></button>
-  <button type="button" class="btn btn-warning"><%= link_to 'Back', players_path %></button>
+  <button type="button" class="btn btn-danger"><%= link_to '編集', edit_player_path(@player) %></button>
+  <button type="button" class="btn btn-warning"><%= link_to '戻る', players_path %></button>
 </div>
 

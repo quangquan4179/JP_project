@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Players</h1>
+<h1>選手</h1>
 
 <%= form_tag players_path, :method => 'get' do %>
     <%= text_field_tag :player_name, params[:player_name] %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "検索" %>
 <% end %>
 
 
-<%= link_to 'Advanced search', new_search_player_path %>
+<%= link_to '高度な検索', new_search_player_path %>
 
 <table class="table">
   <thead >
     <tr> 
-      <th>Name</th>
+      <th>名前</th>
       <th>誕生日</th>
       <th>国</th>
       <th>高さ</th>
@@ -36,9 +36,9 @@
             <td><%= player.height %></td>
             <td><%= player.weight %></td>
             <td><%= player.club %></td>
-            <td><%= link_to 'Show', player %></td>
-            <td><%= link_to 'Edit', edit_player_path(player) %></td>
-            <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to '詳細', player, class: 'btn btn-outline-primary btn-block' %></td>
+            <td><%= link_to '編集', edit_player_path(player), class: 'btn btn-outline-warning btn-block' %></td>
+            <td><%= link_to '削除', player, method: :delete, data: { confirm: '本当ですか？' }, class: 'btn btn-outline-danger btn-block' %></td>
           </tr>
         <% end %>
     <% end %>
@@ -47,7 +47,7 @@
 
 <br>
 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-  <button type="button" class="btn btn-danger"><%=link_to 'All Players',players_path%></button>
-  <button type="button" class="btn btn-warning"><%=link_to 'New Player',new_player_path%></button>
+  <button type="button" class="btn btn-danger"><%=link_to '全ての選手',players_path%></button>
+  <button type="button" class="btn btn-warning"><%=link_to '追加',new_player_path%></button>
 </div>
 
