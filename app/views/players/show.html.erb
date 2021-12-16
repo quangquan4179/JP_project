@@ -72,7 +72,7 @@
                 <% @player.transfer_history.each do |transfer_history|%>
                    <tr>
                       <td><%= transfer_history.old_club %></td>
-                      <td><%= transfer_history.new_club %>,</td>
+                      <td><%= transfer_history.new_club %></td>
                       <td><%= transfer_history.day %></td>
                       <td><%= transfer_history.note %></td>
                    </tr>
@@ -80,9 +80,9 @@
                
             </tbody>
          </table>
-       
-          <button type="button" class="btn btn-primary">    <%= link_to '譲渡追加', new_player_transfer_history_path(@player) %>
-</button>
+    <button type="button" class="btn btn-outline-info btn-sm" ><%= link_to '譲渡追加', new_player_transfer_history_path(@player) %>
+    </button>
+          
     </ul>
 </div>
 
