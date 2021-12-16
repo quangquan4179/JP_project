@@ -13,26 +13,27 @@
 
 
   <div class="field">
-    <%= form.label :old_club %>
+    <%= form.label :old_club,"以前のクラブ" %>
     <%= form.text_area :old_club %>
   </div>
 
   <div class="field">
-    <%= form.label :new_club %>
+    <%= form.label :new_club,"以降のクラブ" %>
     <%= form.text_area :new_club %>
   </div>
 
   <div class="field">
-    <%= form.label :day %>
+    <%= form.label :day, "デート" %>
     <%= form.date_select :day %>
   </div>
 
   <div class="field">
-    <%= form.label :note %>
+    <%= form.label :note, "ノート" %>
     <%= form.text_area :note %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "譲渡追加"%>
   </div>
 <% end %>
+
