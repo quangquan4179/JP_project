@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :player_name %>
+    <%= form.label :player_name, "名前" %>
     <%= form.text_field :player_name %>
   </div>
 
   <div class="field">
-    <%= form.label :country %>
+    <%= form.label :country, "国籍" %>
     <%= form.text_field :country %>
   </div>
 
   <div class="field">
-    <%= form.label :club %>
+    <%= form.label :club,"クラブ" %>
     <%= form.text_field :club %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "検索" %>
   </div>
 <% end %>
